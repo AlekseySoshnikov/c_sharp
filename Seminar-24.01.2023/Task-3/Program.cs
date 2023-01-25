@@ -5,7 +5,7 @@
 
 int len = new Random().Next(0, 11);
 
-PrintResult(GetRandomArray(len));
+PrintResult(GetRandomArray(len), len);
 
 int[] GetRandomArray (int len)
 {
@@ -19,18 +19,17 @@ int[] GetRandomArray (int len)
     return res;
 }
 
-void PrintResult (int[] arr)
+void PrintResult (int[] arr, int len)
 {
-    for (int i = 0; i < arr.Length - 2; i++)
+    for (int i = 0; i < len - 1; i++)
     {
         System.Console.Write(arr[i] + ", ");
     }
-    System.Console.Write(arr[arr.Length - 1] + " -> [");
+    System.Console.Write(arr[len - 1] + " -> [");
 
-    for (int i = 0; i < arr.Length - 2; i++)
+    for (int i = 0; i < len - 1; i++)
     {
         System.Console.Write(arr[i] + ", ");
     }
-    System.Console.Write(arr[arr.Length - 1] + "]");
-
+    System.Console.Write(arr[len - 1] + "]");
 }
